@@ -1,8 +1,8 @@
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.EmployeeContext.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Mercadinho.Infrastructure.Mappings;
+namespace Mercadinho.Infrastructure.EmployeeContext.Mappings;
 
 public class EmployeeMap : IEntityTypeConfiguration<Employee>
 {

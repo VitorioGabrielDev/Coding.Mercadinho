@@ -1,4 +1,4 @@
-namespace Mercadinho.Domain.Enums;
+namespace Mercadinho.Domain.EmployeeContext.Enums;
 
 public enum EmployeeRoleEnum
 {

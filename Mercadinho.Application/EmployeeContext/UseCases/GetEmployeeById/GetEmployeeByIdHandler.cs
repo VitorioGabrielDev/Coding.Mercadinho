@@ -1,6 +1,6 @@
-using Mercadinho.Application.Repositories;
+using Mercadinho.Application.EmployeeContext.Repositories;
 using Mercadinho.Application.SharedContext;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.EmployeeContext.Entities;
 
 namespace Mercadinho.Application.EmployeeContext.UseCases.GetEmployeeById;
 
@@ -21,7 +21,7 @@ public class GetEmployeeByIdHandler(
                 return Result<GetEmployeeByIdResponse>.ValidationError("O funcionário informado não foi encontrado!");
 
             GetEmployeeByIdResponse response = new(Name: employee.Name, Role: employee.Role);
-            return Result<GetEmployeeByIdResponse>.Successfully(response);
+            return Result.Successfully(response);
         }
         catch (Exception e)
         {

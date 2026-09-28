@@ -1,6 +1,6 @@
 using Mercadinho.Application.ProductContext.Repositories;
 using Mercadinho.Application.SharedContext;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.ProductContext.Entities;
 
 namespace Mercadinho.Application.ProductContext.UseCases.GetProductById;
 
@@ -21,7 +21,7 @@ public class GetProductByIdHandler(
                 return Result<GetProductByIdResponse>.ValidationError("O produto não foi encontrado com o identificador informado!");
             
             GetProductByIdResponse response = new(product.Id, product.Name, product.Description, product.Value);
-            return Result<GetProductByIdResponse>.Successfully(response);
+            return Result.Successfully(response);
         } catch (Exception e)
         {
             return Result<GetProductByIdResponse>.InternalError(e.Message);

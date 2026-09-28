@@ -1,6 +1,6 @@
 using Mercadinho.Application.ProductContext.Repositories;
 using Mercadinho.Application.SharedContext;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.ProductContext.Entities;
 
 namespace Mercadinho.Application.ProductContext.UseCases.DeleteProduct;
 
@@ -25,7 +25,7 @@ public class DeleteProductHandler(
             await unitOfWork.CommitAsync();
 
             DeleteProductResponse response = new("O produto foi deletado com sucesso!");
-            return Result<DeleteProductResponse>.Successfully(response);
+            return Result.Successfully(response);
 
         } catch (Exception e)
         {

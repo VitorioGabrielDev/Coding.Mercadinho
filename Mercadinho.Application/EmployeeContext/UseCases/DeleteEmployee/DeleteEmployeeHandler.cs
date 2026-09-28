@@ -1,6 +1,6 @@
-using Mercadinho.Application.Repositories;
+using Mercadinho.Application.EmployeeContext.Repositories;
 using Mercadinho.Application.SharedContext;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.EmployeeContext.Entities;
 
 namespace Mercadinho.Application.EmployeeContext.UseCases.DeleteEmployee;
 
@@ -25,7 +25,7 @@ public class DeleteEmployeeHandler(
             await unitOfWork.CommitAsync();
 
             DeleteEmployeeResponse response = new();
-            return Result<DeleteEmployeeResponse>.Successfully(response);
+            return Result.Successfully(response);
         } 
         catch (Exception e)
         {

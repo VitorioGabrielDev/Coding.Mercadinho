@@ -1,9 +1,9 @@
 using Mercadinho.Application.ProductContext.Repositories;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.ProductContext.Entities;
 using Mercadinho.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mercadinho.Infrastructure.Repositories;
+namespace Mercadinho.Infrastructure.ProductContext.Repositories;
 
 public class ProductRepository(
     AppDbContext dbContext
@@ -15,23 +15,17 @@ public class ProductRepository(
     public async Task<Product?> GetProductByIdAsync(int id) =>
         await dbContext.Products.FirstOrDefaultAsync(x => x.Id == id);
 
-    public async Task<Product?> UpdateProductAsync(Product product)
+    public async Task UpdateProductAsync(Product product)
     {
         Product? trackedEntity = await GetProductByIdAsync(id: product.Id);
-
-        if (trackedEntity is null) return null;
-
+        if (trackedEntity is null) return;
         dbContext.Entry(trackedEntity).CurrentValues.SetValues(product);
-        return trackedEntity;
     }
 
-    public async Task<bool> DeleteProductAsync(int id)
+    public async Task DeleteProductAsync(int id)
     {
         Product? dbProduct = await GetProductByIdAsync(id: id);
-
-        if (dbProduct is null) return false;
-
+        if (dbProduct is null) return;
         dbContext.Products.Remove(dbProduct);
-        return true;
     }
 }

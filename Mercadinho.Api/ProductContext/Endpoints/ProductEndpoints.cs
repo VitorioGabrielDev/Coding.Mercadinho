@@ -23,7 +23,7 @@ public static class ProductEndpoints
             return endpoints;
         }
     }
-// http://localhost:5003/api/product/create-product
+
     private static async Task<IResult> GetProductById(
         [AsParameters] GetProductByIdQuery query,
         [FromServices] HandlerAsync<GetProductByIdQuery, GetProductByIdResponse> handler

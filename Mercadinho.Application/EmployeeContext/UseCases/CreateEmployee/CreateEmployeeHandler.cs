@@ -1,6 +1,6 @@
-using Mercadinho.Application.Repositories;
+using Mercadinho.Application.EmployeeContext.Repositories;
 using Mercadinho.Application.SharedContext;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.EmployeeContext.Entities;
 
 namespace Mercadinho.Application.EmployeeContext.UseCases.CreateEmployee;
 
@@ -22,7 +22,7 @@ public class CreateEmployeeHandler(
             await unitOfWork.CommitAsync();
 
             CreateEmployeeResponse response = new();
-            return Result<CreateEmployeeResponse>.Successfully(response);
+            return Result.Successfully(response);
         }
         catch (Exception e)
         {

@@ -1,6 +1,7 @@
-using Mercadinho.Domain.Enums;
+using Mercadinho.Domain.EmployeeContext.Enums;
+using Mercadinho.Domain.SharedContext.Entities;
 
-namespace Mercadinho.Domain.Entities;
+namespace Mercadinho.Domain.EmployeeContext.Entities;
 
 public class Employee : Entity
 {

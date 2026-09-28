@@ -1,4 +1,6 @@
-namespace Mercadinho.Domain.Entities;
+using Mercadinho.Domain.SharedContext.Entities;
+
+namespace Mercadinho.Domain.ProductContext.Entities;
 
 public class Stock : Entity
 {

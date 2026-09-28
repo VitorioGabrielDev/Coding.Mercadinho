@@ -2,7 +2,7 @@ using Mercadinho.Application.SharedContext;
 using Mercadinho.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Mercadinho.Infrastructure.Repositories;
+namespace Mercadinho.Infrastructure.SharedContext;
 
 public class UnitOfWork(
     AppDbContext dbContext    

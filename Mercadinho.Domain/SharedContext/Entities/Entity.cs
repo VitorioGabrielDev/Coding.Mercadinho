@@ -1,6 +1,6 @@
 using Flunt.Notifications;
 
-namespace Mercadinho.Domain.Entities;
+namespace Mercadinho.Domain.SharedContext.Entities;
 
 public abstract class Entity : Notifiable<Notification>
 {

@@ -1,4 +1,4 @@
-using Mercadinho.Domain.Enums;
+using Mercadinho.Domain.EmployeeContext.Enums;
 
 namespace Mercadinho.Application.EmployeeContext.UseCases.GetEmployeeById;
 

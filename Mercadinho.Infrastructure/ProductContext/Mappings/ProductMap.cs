@@ -1,8 +1,8 @@
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.ProductContext.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Mercadinho.Infrastructure.Mappings;
+namespace Mercadinho.Infrastructure.ProductContext.Mappings;
 
 public class ProductMap : IEntityTypeConfiguration<Product>
 {

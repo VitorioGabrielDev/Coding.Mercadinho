@@ -1,4 +1,5 @@
 using Mercadinho.Api.SharedContext;
+using Mercadinho.Application.EmployeeContext.Repositories;
 using Mercadinho.Application.EmployeeContext.UseCases.CreateEmployee;
 using Mercadinho.Application.EmployeeContext.UseCases.DeleteEmployee;
 using Mercadinho.Application.EmployeeContext.UseCases.GetEmployeeById;
@@ -8,10 +9,11 @@ using Mercadinho.Application.ProductContext.UseCases.CreateProduct;
 using Mercadinho.Application.ProductContext.UseCases.DeleteProduct;
 using Mercadinho.Application.ProductContext.UseCases.GetProductById;
 using Mercadinho.Application.ProductContext.UseCases.UpdateProduct;
-using Mercadinho.Application.Repositories;
 using Mercadinho.Application.SharedContext;
 using Mercadinho.Infrastructure.DataAccess;
-using Mercadinho.Infrastructure.Repositories;
+using Mercadinho.Infrastructure.EmployeeContext.Repositories;
+using Mercadinho.Infrastructure.ProductContext.Repositories;
+using Mercadinho.Infrastructure.SharedContext;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

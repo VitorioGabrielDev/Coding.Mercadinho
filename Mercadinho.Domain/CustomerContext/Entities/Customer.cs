@@ -1,11 +1,12 @@
-namespace Mercadinho.Domain.Entities;
+using Mercadinho.Domain.SharedContext.Entities;
+
+namespace Mercadinho.Domain.CustomerContext.Entities;
 
 public class Customer : Entity
 {
     public string Name { get; private set; } = string.Empty;
     public string NationalId { get; private set; } = string.Empty;
     public DateTime BirthDate { get; private set; }
-    
     
     private Customer() { }
 

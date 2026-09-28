@@ -1,6 +1,6 @@
 using Mercadinho.Application.ProductContext.Repositories;
 using Mercadinho.Application.SharedContext;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.ProductContext.Entities;
 
 namespace Mercadinho.Application.ProductContext.UseCases.CreateProduct;
 
@@ -22,7 +22,7 @@ public class CreateProductHandler(
             await unitOfWork.CommitAsync();
 
             CreateProductResponse response = new(product.Id, product.Name, product.Description, product.Value);
-            return Result<CreateProductResponse>.Successfully(response);
+            return Result.Successfully(response);
         }
         catch (Exception e)
         {

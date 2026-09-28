@@ -1,9 +1,9 @@
-using Mercadinho.Application.Repositories;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Application.EmployeeContext.Repositories;
+using Mercadinho.Domain.EmployeeContext.Entities;
 using Mercadinho.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mercadinho.Infrastructure.Repositories;
+namespace Mercadinho.Infrastructure.EmployeeContext.Repositories;
 
 public class EmployeeRepository(
     AppDbContext dbContext
@@ -15,23 +15,17 @@ public class EmployeeRepository(
     public async Task<Employee?> GetEmployeeByIdAsync(int id) =>
         await dbContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
 
-    public async Task<Employee?> UpdateEmployeeAsync(Employee employee)
+    public async Task UpdateEmployeeAsync(Employee employee)
     {
         Employee? trackedEntity = await GetEmployeeByIdAsync(id: employee.Id);
-    
-        if (trackedEntity is null) return null;
-
+        if (trackedEntity is null) return;
         dbContext.Entry(trackedEntity).CurrentValues.SetValues(employee);
-        return trackedEntity;
     }
 
-    public async Task<bool> DeleteEmployeeAsync(int id)
+    public async Task DeleteEmployeeAsync(int id)
     {
         Employee? dbProduct = await GetEmployeeByIdAsync(id: id);
-
-        if (dbProduct is null) return false;
-
+        if (dbProduct is null) return;
         dbContext.Employees.Remove(dbProduct);
-        return true;
     }
 }

@@ -1,5 +1,8 @@
 using Flunt.Notifications;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.CustomerContext.Entities;
+using Mercadinho.Domain.EmployeeContext.Entities;
+using Mercadinho.Domain.ProductContext.Entities;
+using Mercadinho.Domain.SharedContext.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mercadinho.Infrastructure.DataAccess;
@@ -8,6 +11,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 {
     public DbSet<Product> Products { get; set; } = null!;
     public DbSet<Employee> Employees { get; set; } = null!;
+    public DbSet<Customer> Customers { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -4,6 +4,10 @@
     <ProjectReference Include="..\Mercadinho.Domain\Mercadinho.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CustomerContext\UseCases\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

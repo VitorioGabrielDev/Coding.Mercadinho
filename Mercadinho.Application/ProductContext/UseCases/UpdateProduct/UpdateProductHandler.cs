@@ -1,6 +1,6 @@
 using Mercadinho.Application.ProductContext.Repositories;
 using Mercadinho.Application.SharedContext;
-using Mercadinho.Domain.Entities;
+using Mercadinho.Domain.ProductContext.Entities;
 
 namespace Mercadinho.Application.ProductContext.UseCases.UpdateProduct;
 
@@ -27,7 +27,7 @@ public class UpdateProductHandler(
             await unitOfWork.CommitAsync();
             
             UpdateProductResponse response = new(product.Name, product.Description, product.Value);
-            return Result<UpdateProductResponse>.Successfully(response);
+            return Result.Successfully(response);
         }
         catch (Exception e)
         {
